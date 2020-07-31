@@ -10,5 +10,3 @@
 (package-initialize)
 
 (provide 'pkg)
-
-;;; pkg.el ends here

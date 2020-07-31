@@ -48,5 +48,3 @@
      ,@(if (cdr (cdr spec)) (cdr (cdr spec)))))
 
 (provide 'macrolv)
-
-;;; macrolv.el ends here

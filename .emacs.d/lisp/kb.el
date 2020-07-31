@@ -27,5 +27,3 @@
 (key-chord-define-global ".d" 'next-buffer)
 
 (provide 'kb)
-
-;;; kb.el ends here

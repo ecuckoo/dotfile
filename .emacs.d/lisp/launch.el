@@ -7,10 +7,13 @@
 	       (("tor" "-f" ,(expand-file-name ".tor/torrc"
 					       (or (bound-and-true-p home-directory) (getenv "HOME")))) . tor)
 	       ((ansi-term "/bin/bash") . sh)
-	       (("firefox" "-P" "origin" "--no-remote") . ww)
-	       (("firefox" "-P" "u" "--no-remote") . wwu)
-	       (("firefox" "-P" "firefly" "--no-remote") . wwf)
-	       (("firefox" "-P" "tor" "--no-remote") . wwt)))
+	       (("pokerth") . pk)
+	       (("geph" "-forceBridges" "-username" "dyad" "-password" "dyad") . g)
+	       (("firefox" "-P" "origin" "--no-remote") . w)
+	       (("firefox" "-P" "geph" "--no-remote") . gw)
+	       (("firefox" "-P" "u" "--no-remote") . uw)
+	       (("firefox" "-P" "firefly" "--no-remote") . fw)
+	       (("firefox" "-P" "tor" "--no-remote") . tw)))
 	(symbol-valid (lambda (arg)
 			(if (symbolp arg)
 			    (or (fboundp arg)
@@ -42,7 +45,7 @@
     (list (mapcar 'intern (split-string input)))))
 
 (defun launch (alias &optional action)
-  (interactive (launch-interactive-args "alias: "))
+  (interactive (launch-interactive-args "symbol: "))
   (unless (called-interactively-p 'interactive)
     (if (nlistp alias) (error "Invalid arg type, %S" alias)))
   (let ((exec-path (cons (expand-file-name "sh"
@@ -58,18 +61,17 @@
 		      (let ((program (car value)) (args (cdr value)))
 			(if (get key 'bind-eval-form)
 			    (apply program args)
-			  (and (executable-find program)
-			       (apply 'start-process program nil program args)))
+			  (let ((file  (executable-find program)))
+			    (and file
+				 (let ((default-directory (file-name-directory file)))
+				   (apply 'start-process program nil program args)))))
 			(throw 'done t)))
 		 (message "No assocation matching symbol, %S" symbol)))))))
 
 (add-hook 'emacs-startup-hook
 	  (lambda ()
-	    (launch '(u ff dic))))
+	    (launch '(g u ff dic))))
 
 (key-chord-define-global ",l" 'launch)
 
 (provide 'launch)
-
-;;; launch.el ends here
-

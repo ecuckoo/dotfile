@@ -1,4 +1,4 @@
-;; Pref
+;;; Pref
 
 (setq frame-resize-pixelwise t
       initial-frame-alist '((fullscreen . maximized))
@@ -9,15 +9,12 @@
 (setq make-backup-files nil)
 (setq auto-image-file-mode t)
 (setq tab-width 4
-      tab-stop-list()
       indent-tabs-mode nil)
 (setq display-time-day-and-date t
       display-time-24hr-format t
       display-time-format "%d %m %Y %H:%M")
-(setq user-full-name "ith yiel"
-      user-mail-address "ithyiel@gmail.com")
-(setq home-directory (getenv "HOME")
-      source-directory (expand-file-name "source/emacs" home-directory))
+(setq user-full-name ""
+      user-mail-address "")
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (setenv "LC_CTYPE" "zh_CN.utf-8")
@@ -33,12 +30,12 @@
  '(display-time-mode t)
  '(fringe-mode 0 nil (fringe))
  '(menu-bar-mode nil)
+ '(package-selected-packages (quote (pug-mode key-chord)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(tool-bar-mode nil)
- '(tooltip-mode nil)
- '(package-selected-packages (quote (key-chord))))
+ '(tooltip-mode nil))
 
 (custom-set-faces
  '(default ((t (:inherit nil :slant normal :weight normal :height 113 :width normal :foundry "Mono" :family "Arial"))))
