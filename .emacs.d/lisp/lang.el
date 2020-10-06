@@ -1,4 +1,4 @@
-;;; lang.el PL environment
+;; lang.el PL environment
 
 (global-unset-key [S-down-mouse-1])
 
@@ -22,3 +22,5 @@
 (add-hook 'js-mode-hook 'hs-minor-mode)
 
 (provide 'lang)
+
+;; lang.el ends

@@ -1,4 +1,4 @@
-;;; Pref
+;; pref.el Preferences
 
 (setq frame-resize-pixelwise t
       initial-frame-alist '((fullscreen . maximized))
@@ -21,16 +21,16 @@
 
 (add-hook 'comint-output-filter-functions 'comint-watch-for-password-prompt) 
 
-(custom-set-variables
- '(blink-cursor-mode t)
+(custom-set-variables '(blink-cursor-mode t)
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
  '(default-input-method "chinese-py")
  '(display-battery-mode t)
  '(display-time-mode t)
  '(fringe-mode 0 nil (fringe))
+ '(line-number-mode t)
  '(menu-bar-mode nil)
- '(package-selected-packages (quote (pug-mode key-chord)))
+ '(package-selected-packages (quote (colorless-themes pug-mode key-chord)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(size-indication-mode t)
@@ -44,3 +44,5 @@
  '(variable-pitch ((t (:inherit default)))))
 
 (provide 'pref)
+
+;; pref.el ends

@@ -1,4 +1,4 @@
-;;; macrolv.el macro level
+;; macrolv.el Macro level
 
 (require 'macroexp)
 (require 'gv)
@@ -48,3 +48,5 @@
      ,@(if (cdr (cdr spec)) (cdr (cdr spec)))))
 
 (provide 'macrolv)
+
+;; macrolv.el ends

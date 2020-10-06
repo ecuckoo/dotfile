@@ -1,4 +1,4 @@
-;;; pkg.el package initialize -*- lexical-binding: t -*-
+;; pkg.el Package initialize -*- lexical-binding: t -*-
 
 (let ((miniver 24))
   (when (< emacs-major-version miniver)
@@ -10,3 +10,5 @@
 (package-initialize)
 
 (provide 'pkg)
+
+;; pkg.el ends
