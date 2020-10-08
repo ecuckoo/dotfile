@@ -21,7 +21,8 @@
 
 (add-hook 'comint-output-filter-functions 'comint-watch-for-password-prompt) 
 
-(custom-set-variables '(blink-cursor-mode t)
+(custom-set-variables
+ '(blink-cursor-mode t)
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
  '(default-input-method "chinese-py")
@@ -36,7 +37,7 @@
  '(size-indication-mode t)
  '(tool-bar-mode nil)
  '(tooltip-mode nil))
-
+ 
 (custom-set-faces
  '(default ((t (:inherit nil :slant normal :weight normal :height 113 :width normal :foundry "Mono" :family "Arial"))))
  '(fixed-pitch ((t (:inherit default))))

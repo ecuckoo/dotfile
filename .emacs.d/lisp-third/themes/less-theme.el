@@ -34,7 +34,7 @@ by `color-theme-late-night' and the Less is More theme for vim.")
  '(italic ((t (:bold t))))
  '(underline ((t (:bold t))))
  '(variable-pitch ((t (nil))))
- '(cursor ((t (:background "yellow"))))
+ '(cursor ((t (:background "white"))))
  '(font-lock-comment-face ((t (:bold t :foreground "dim gray"))))
  '(font-lock-comment-delimiter-face ((t (:bold t :foreground "dim gray"))))
  '(font-lock-function-name-face ((t (:foreground "gray90"))))
@@ -216,10 +216,10 @@ by `color-theme-late-night' and the Less is More theme for vim.")
 
 (provide-theme 'less)
 
-;;;###autoload
-(when load-file-name
-  (add-to-list 'custom-theme-load-path
-               (file-name-as-directory (file-name-directory load-file-name))))
+;; ;;;###autoload
+;; (when load-file-name
+;;   (add-to-list 'custom-theme-load-path
+;;                (file-name-as-directory (file-name-directory load-file-name))))
 
 ;; Local Variables:
 ;; eval: (when (require 'rainbow-mode nil t) (rainbow-mode 1))
