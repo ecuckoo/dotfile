@@ -9,6 +9,7 @@
 	       ((ansi-term "/bin/bash") . sh)
 	       (("pokerth") . pk)
 	       (("geph" "-forceBridges" "-username" "dyad" "-password" "dyad") . g)
+	       (("chromium" "--ingonito") . w1)
 	       (("firefox" "-P" "origin" "--no-remote") . w)
 	       (("firefox" "-P" "geph" "--no-remote") . gw)
 	       (("firefox" "-P" "u" "--no-remote") . uw)

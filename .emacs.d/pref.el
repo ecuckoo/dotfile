@@ -31,7 +31,7 @@
  '(fringe-mode 0 nil (fringe))
  '(line-number-mode t)
  '(menu-bar-mode nil)
- '(package-selected-packages (quote (colorless-themes pug-mode key-chord)))
+ '(package-selected-packages (quote (colorless-themes key-chord)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(size-indication-mode t)
