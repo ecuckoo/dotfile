@@ -5,7 +5,8 @@
     (error "As built-in `package', requires emacs %s or higher" miniver)))
 
 (require 'package)
-(add-to-list 'package-archives (cons "melpa" "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 
 (package-initialize)
 

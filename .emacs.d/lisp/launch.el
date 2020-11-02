@@ -9,7 +9,7 @@
 	       ((ansi-term "/bin/bash") . sh)
 	       (("pokerth") . pk)
 	       (("geph" "-forceBridges" "-username" "dyad" "-password" "dyad") . g)
-	       (("chromium" "--ingonito") . w1)
+	       (("chromium" "--proxy-server=127.0.0.1:9910" "--proxy-server=socks5://127.0.0.1:9909") . w1)
 	       (("firefox" "-P" "origin" "--no-remote") . w)
 	       (("firefox" "-P" "geph" "--no-remote") . gw)
 	       (("firefox" "-P" "u" "--no-remote") . uw)

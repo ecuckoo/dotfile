@@ -6,14 +6,14 @@
 	  (lambda ()
 	    (when hs-minor-mode
 	      (define-key hs-minor-mode-map [S-mouse-2] 'hs-hide-level)
-	      (define-key hs-minor-mode-map [S-mouse-1] 'hs-mouse-toggle-hiding))))
+	      (define-key hs-minor-mode-map [S-mouse-1] 'hs-toggle-hiding))))
 
 (add-hook 'pug-mode-hook
-		  (lambda ()
-			(let ((size 4))
-			  (setq indent-tabs-mode nil
-					tab-width size
-					pug-tab-width size))))
+	  (lambda ()
+	    (let ((size 4))
+	      (setq indent-tabs-mode nil
+		    tab-width size
+		    pug-tab-width size))))
 
 (add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
 (add-hook 'lisp-mode-hook 'hs-minor-mode)
