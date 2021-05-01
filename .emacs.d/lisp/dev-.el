@@ -2,6 +2,9 @@
 
 (global-unset-key [S-down-mouse-1])
 
+;;(defun source-file-view)
+;;(add-hook 'find-file-hook 'source-file-view)
+
 (add-hook 'hs-minor-mode-hook
 	  (lambda ()
 	    (when hs-minor-mode
@@ -19,8 +22,15 @@
 (add-hook 'lisp-mode-hook 'hs-minor-mode)
 (add-hook 'scheme-mode-hook 'hs-minor-mode)
 (add-hook 'c-mode-hook 'hs-minor-mode)
-(add-hook 'js-mode-hook 'hs-minor-mode)
-
-(provide 'dev-)
+(add-hook 'js-mode-hook 'hs-minor-mode )
+(add-hook 'web-mode-hook 'hs-minor-mode)
 
 ;; dev-.el ends
+
+;; (defmacro hook-modes (modes &rest body)
+;;   (declare (indent 1))
+;;   `(--each ,modes
+;;      (add-hook (intern (format "%s-hook" it))
+;;                (lambda () ,@body))))
+
+(provide 'dev-)

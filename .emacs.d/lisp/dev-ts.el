@@ -45,23 +45,23 @@
 (defun set-tide ()
   (interactive)
   (tide-setup)
-  (flycheck-mode 1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  ;;(flycheck-mode 1)
+  ;;(setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode 1)
   (tide-hl-identifier-mode 1)
   (company-mode 1))
 
 ;; javascript
 
-(add-hook 'js-mode-hook #'set-tide)
+;;(add-hook 'js-mode-hook #'set-tide)
 
 ;; typescript
 
 (setq company-tooltip-align-annotations t)
 
 (add-hook 'before-save-hook 'tide-format-before-save)
-(add-hook 'typescript-mode-hook 'hs-minor-mode)
 (add-hook 'typescript-mode-hook #'set-tide)
+(add-hook 'typescript-mode-hook 'hs-minor-mode)
 
 ;; format options
 
@@ -76,7 +76,7 @@
 (add-hook 'web-mode-hook
           (lambda ()
             (when (string-equal "jsx" (file-name-extension buffer-file-name))
-              (setup-tide-mode))))
+              (set-tide))))
 
 ;; configure jsx-tide checker to run after your default jsx checker
 ;; (flycheck-add-mode 'javascript-eslint 'web-mode)
@@ -89,10 +89,20 @@
 (add-hook 'web-mode-hook
           (lambda ()
             (when (string-equal "tsx" (file-name-extension buffer-file-name))
-              (set-ts))))
+              (set-tide))))
 
 ;; enable typescript-tslint checker
 ;; (flycheck-add-mode 'typescript-tslint 'web-mode)
+
+;; prettier
+;; (setq prettier-js-args '(
+;;   "--trailing-comma" "none"
+;;   "--bracket-spacing" "true"
+;;   "--single-quote" "true"
+;;   "--no-semi" "true"
+;;   "--jsx-single-quote" "true"
+;;   "--jsx-bracket-same-line" "true"
+;;   "--print-width" "100"))
 
 (provide 'dev-ts)
 
