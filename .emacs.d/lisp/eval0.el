@@ -1,4 +1,4 @@
-;; eval0.el Evaluate stuff
+;; eval0.el Evaluation stuff
 ;; (read-kbd-macro SEQ)
 
 ;; resettable `ctrl-meta-x'
@@ -8,5 +8,4 @@
 			 (call-interactively #'eval-last-sexp))))
 
 (provide 'eval0)
-
 ;; eval0.el ends

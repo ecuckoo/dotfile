@@ -12,5 +12,4 @@
 (key-chord-define-global "?k" 'describe-key)
 
 (provide 'search0)
-
 ;; search0.el ends

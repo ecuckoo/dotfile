@@ -9,5 +9,4 @@
 (key-chord-define-global "/s" 'split-window-below)
 
 (provide 'window0)
-
 ;; window0.el ends

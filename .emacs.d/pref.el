@@ -1,4 +1,4 @@
-;; pref.el Preferences
+;; pref.el Preference
 
 (setq frame-resize-pixelwise t
       initial-frame-alist '((fullscreen . maximized))
@@ -8,12 +8,13 @@
 (setq visible-bell t)
 (setq make-backup-files nil)
 (setq auto-image-file-mode t)
-(setq tab-width 2
-      indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil
+	      js-indent-level 2
+	      tab-width 2)
 (setq display-time-day-and-date t
       display-time-24hr-format t
       display-time-format "%d %m %Y %H:%M")
-(setq user-full-name "niflce"
+(setq user-full-name "nifl ce"
       user-mail-address "niflndce@gmail.com")
 
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -28,10 +29,11 @@
  '(default-input-method "chinese-py")
  '(display-battery-mode t)
  '(display-time-mode t)
+ '(flycheck-javascript-flow-args nil)
  '(fringe-mode 0 nil (fringe))
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(flow-js2-mode emms flow-minor-mode pdf-tools nov use-package flycheck company colorless-themes key-chord))
+   '(expand-region company-flow flycheck-flow xref-js2 js2-mode flow-js2-mode emms flow-minor-mode pdf-tools nov use-package flycheck company colorless-themes key-chord))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(size-indication-mode t)
@@ -45,5 +47,4 @@
  '(variable-pitch ((t (:inherit default)))))
 
 (provide 'pref)
-
 ;; pref.el ends

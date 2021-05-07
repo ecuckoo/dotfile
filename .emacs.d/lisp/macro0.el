@@ -3,6 +3,7 @@
 (require 'macroexp)
 (require 'gv)
 
+;;;###autoload
 (defmacro push-ref (elt place)
   (declare (debug (form gv-place)))
   (let ((xcar `(car ,place)) (xcdr `(cdr ,place)))
@@ -15,6 +16,7 @@
 	    (gv-letplace (_getter setter) xcar
 	      (funcall setter v)))))))
 
+;;;###autoload
 (defmacro pop-ref (place)
   (declare (debug (form gv-place)))
   (let ((xcar `(car ,place)) (xcdr `(cdr ,place)))
@@ -28,6 +30,7 @@
 	  ,(gv-letplace (getter setter) xcdr
 	     (funcall setter `(cdr ,getter))))))))
 
+;;;###autoload
 (defmacro for-each-tail (spec &rest body)
   (declare (indent 1) (debug ((symbolp form &optional form) body)))
   (unless (consp spec)
@@ -48,5 +51,4 @@
      ,@(if (cdr (cdr spec)) (cdr (cdr spec)))))
 
 (provide 'macro0)
-
 ;; macro0.el ends
